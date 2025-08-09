@@ -3,6 +3,21 @@
     "name": "LeetCode Editor Font Changer",
     "version": "1.0.0",
     "description": "Forces LeetCode's code editor to use specified font.",
+    "homepage_url": "https://github.com/shivam23rawat/leetcode-font-changer",
+    "options_ui": {
+        "page": "options.html",
+        "open_in_tab": true
+    },
+    "action": {
+        "default_title": "LeetCode Font Changer",
+        "default_popup": "popup.html"
+    },
+    "permissions": [
+        "contextMenus"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
     "content_scripts": [
         {
             "matches": [
@@ -14,6 +29,16 @@
             ],
             "run_at": "document_start",
             "all_frames": true
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "metadata.json"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
         }
     ]
 }
