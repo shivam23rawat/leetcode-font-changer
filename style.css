@@ -1,0 +1,45 @@
+/* LeetCode uses Monaco editor for most pages and may use CodeMirror in some legacy contexts.
+   We force the font to the custom font where possible and fall back to common monospace fonts.
+   Ensure the font is installed on your system for it to render. */
+
+/* Global monospace preference on LeetCode pages (low priority) */
+html,
+body {
+    /* Prefer Fantasque if present; otherwise use Meslo (closest to Menlo on Windows), then other common monospace fonts */
+    --lc-mono-font:
+        "MesloLGS NF", "FantasqueSansM Nerd Font Mono", "FantasqueSansMono Nerd Font Mono", "FantasqueSansM Nerd Font", "Fantasque Sans Mono",
+        "Cascadia Code", "Fira Code", Consolas, "Liberation Mono", Menlo, Monaco, "Courier New", monospace !important;
+}
+
+/* Monaco editor: target the content area and token text */
+.monaco-editor,
+.monaco-editor * {
+    font-family: var(--lc-mono-font) !important;
+}
+
+/* CodeMirror (just in case) */
+.cm-editor,
+.cm-content,
+.CodeMirror,
+.CodeMirror pre,
+.cm-scroller,
+.cm-line,
+.cm-gutters {
+    font-family: var(--lc-mono-font) !important;
+}
+
+/* Tweak metrics to look nice with Fantasque */
+.monaco-editor,
+.CodeMirror,
+.cm-editor {
+    line-height: 1.45 !important;
+    font-size: 14px !important;
+    /* Adjust to taste or override via DevTools */
+}
+
+/* Inputs and code blocks rendered in problem statements */
+code,
+pre,
+pre code {
+    font-family: var(--lc-mono-font) !important;
+}

@@ -1,0 +1,19 @@
+{
+    "manifest_version": 3,
+    "name": "LeetCode Editor Font Changer",
+    "version": "1.0.0",
+    "description": "Forces LeetCode's code editor to use specified font.",
+    "content_scripts": [
+        {
+            "matches": [
+                "https://leetcode.com/*",
+                "https://*.leetcode.com/*"
+            ],
+            "css": [
+                "style.css"
+            ],
+            "run_at": "document_start",
+            "all_frames": true
+        }
+    ]
+}
